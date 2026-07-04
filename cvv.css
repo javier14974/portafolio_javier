@@ -21,6 +21,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +47,9 @@ body {
 .cabecera {
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1.5rem 2rem;
 }
 
@@ -71,6 +75,31 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.boton-contacto {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--texto);
+  text-decoration: none;
+  background-color: var(--fondo);
+  border: 3px solid var(--borde);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+  transition: transform 0.15s steps(2);
+}
+
+.boton-contacto:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    calc(var(--pixel) + 2px) 0 0 0 var(--borde),
+    0 calc(var(--pixel) + 2px) 0 0 var(--borde),
+    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde);
 }
 
 /* Contenedor principal */
@@ -131,6 +160,24 @@ body {
   height: 1rem;
   width: 50%;
   margin: 0 auto;
+}
+
+/* Empresa — nombre del holding */
+.empresa {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.empresa-titulo {
+  font-size: clamp(1.4rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--texto);
+}
+
+.empresa-holding {
+  color: #c0392b;
 }
 
 /* Grid de cards */
@@ -237,6 +284,93 @@ body {
 .card-titulo:not(:empty)::after,
 .card-descripcion:not(:empty)::after {
   display: none;
+}
+
+/* Sección de habilidades — pastillas de colores */
+.habilidades {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.habilidades-titulo {
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.habilidades-subtitulo {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+.habilidades-grupo {
+  margin-bottom: 2rem;
+}
+
+.habilidades-grupo:last-child {
+  margin-bottom: 0;
+}
+
+.habilidades-grupo-titulo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.habilidades-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.pastilla {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto);
+  border: 3px solid var(--borde);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+  transition: transform 0.15s steps(2);
+}
+
+.pastilla:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    calc(var(--pixel) + 2px) 0 0 0 var(--borde),
+    0 calc(var(--pixel) + 2px) 0 0 var(--borde),
+    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde);
+}
+
+.pastilla-verde {
+  background-color: var(--verde);
+  color: #fff;
+}
+
+.pastilla-rosa {
+  background-color: var(--rosa);
+}
+
+.pastilla-amarillo {
+  background-color: var(--amarillo);
+}
+
+.pastilla-coral {
+  background-color: var(--coral);
+  color: #fff;
+}
+
+.pastilla-menta {
+  background-color: var(--menta);
 }
 
 /* Jardín pixelado — estático, justo encima del pie de página */
@@ -366,6 +500,16 @@ body {
     50% 0%, 85% 15%, 100% 45%, 90% 80%,
     65% 100%, 50% 92%, 35% 100%, 10% 80%,
     0% 45%, 15% 15%
+  );
+}
+
+.pie-contacto-icono-curriculum {
+  background-color: var(--rosa);
+  clip-path: polygon(
+    20% 0%, 80% 0%, 80% 100%, 20% 100%,
+    20% 0%, 30% 0%, 30% 28%, 70% 28%, 70% 38%, 30% 38%,
+    30% 52%, 65% 52%, 65% 62%, 30% 62%,
+    30% 76%, 58% 76%, 58% 86%, 30% 86%
   );
 }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards</title>
+  <title>Portafolio Javier Rios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
       <span class="logo-icono"></span>
       <span class="logo-texto">Portafolio</span>
     </div>
+    <a href="#contacto" class="boton-contacto">Contacto</a>
   </header>
 
   <main class="contenedor">
@@ -30,6 +31,13 @@
       Imagen: dentro de .card-imagen agrega <img src="tu-imagen.png" alt="...">
       Texto: escribe dentro de .card-titulo y .card-descripcion
     -->
+
+    <section class="empresa">
+      <h2 class="empresa-titulo">
+        <p class="empresa-etiqueta">Experiencia en</p>
+        <span class="empresa-holding">Holding</span> grupo firma
+      </h2>
+    </section>
     <section class="grid-cards">
 
       <article class="card">
@@ -37,7 +45,7 @@
           <img src="uploads/resiño_autosya_logo.jpg" alt="resiño_autosya_logo">
         </div>
         <div class="card-contenido">
-          <h2 class="card-titulo">Rediseño de Autos ya</h2>
+          <h2 class="card-titulo">Rediseño de <a href="https://autosyachile.cl/home" target="_blank" rel="noopener noreferrer">Autos ya</a></h2>
           <p class="card-descripcion">Lideré el rediseño y optimización de la plataforma Autos Ya, donde implementé nuevas funcionalidades estratégicas y mejoras en el rendimiento del sistema, utilizando Angular y NestJS como pilares tecnológicos para garantizar una experiencia de usuario eficiente y escalable.</p>
         </div>
       </article>
@@ -47,7 +55,7 @@
           <img src="uploads/IMAGEN_ia2.png" alt="imagen_ia">
         </div>
         <div class="card-contenido">
-          <h2 class="card-titulo">Generación de imagenes con IA</h2>
+          <h2 class="card-titulo">Generación de imagenes con IA en Autos Ya</h2>
           <p class="card-descripcion">Desarrollé funcionalidades de IA para AutosYa, integrando sistemas de visualización 360° y personalización en tiempo real vía OpenRouter, con esto poder modificar imagenes normales y tambien 360°. Tras un análisis estratégico, optimicé el flujo con Gemini 3.1, logrando un equilibrio superior entre calidad visual, eficiencia operativa y tiempos de respuesta de 25-30 segundos para el usuario.</p>
         </div>
       </article>
@@ -93,13 +101,97 @@
       </article> -->
 
     </section>
+
+    <section class="habilidades">
+      <h2 class="habilidades-titulo">Stack & herramientas</h2>
+      <p class="habilidades-subtitulo">Tecnologías con las que trabajo día a día.</p>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Lenguajes</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-verde">TypeScript</span></li>
+          <li><span class="pastilla pastilla-coral">Python</span></li>
+          <li><span class="pastilla pastilla-amarillo">SQL</span></li>
+          <li><span class="pastilla pastilla-menta">JavaScript</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Frontend</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-rosa">Angular</span></li>
+          <li><span class="pastilla pastilla-verde">React</span></li>
+          <li><span class="pastilla pastilla-coral">HTML5</span></li>
+          <li><span class="pastilla pastilla-amarillo">CSS3</span></li>
+          <li><span class="pastilla pastilla-menta">TypeScript</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Backend</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-rosa">NestJS</span></li>
+          <li><span class="pastilla pastilla-verde">Django</span></li>
+          <li><span class="pastilla pastilla-coral">Node.js</span></li>
+          <li><span class="pastilla pastilla-amarillo">API REST</span></li>
+          <li><span class="pastilla pastilla-menta">Arquitectura Cliente-Servidor</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Bases de Datos</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-rosa">MySQL</span></li>
+          <li><span class="pastilla pastilla-verde">MongoDB</span></li>
+          <li><span class="pastilla pastilla-coral">Sequelize</span></li>
+          <li><span class="pastilla pastilla-amarillo">XAMPP</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">IA e Integración</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-menta">OpenRouter</span></li>
+          <li><span class="pastilla pastilla-rosa">Gemini 2.5 Flash</span></li>
+          <li><span class="pastilla pastilla-verde">Gemini 3.1</span></li>
+          <li><span class="pastilla pastilla-coral">Modelos de Lenguaje (LLMs)</span></li>
+          <li><span class="pastilla pastilla-amarillo">Prompt Engineering</span></li>
+          <li><span class="pastilla pastilla-menta">Agentes de IA</span></li>
+          <li><span class="pastilla pastilla-rosa">Automatización de Procesos con IA</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Herramientas y Cloud</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-verde">Git</span></li>
+          <li><span class="pastilla pastilla-coral">GitHub</span></li>
+          <li><span class="pastilla pastilla-amarillo">Firebase</span></li>
+          <li><span class="pastilla pastilla-menta">Cursor</span></li>
+          <li><span class="pastilla pastilla-rosa">Bruno (testing de APIs)</span></li>
+          <li><span class="pastilla pastilla-verde">NotebookLM</span></li>
+          <li><span class="pastilla pastilla-coral">Fathom (transcripción y actas con IA)</span></li>
+        </ul>
+      </div>
+
+      <div class="habilidades-grupo">
+        <h3 class="habilidades-grupo-titulo">Metodologías</h3>
+        <ul class="habilidades-lista">
+          <li><span class="pastilla pastilla-amarillo">Scrum</span></li>
+          <li><span class="pastilla pastilla-menta">Clean Code</span></li>
+          <li><span class="pastilla pastilla-rosa">Principios SOLID</span></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+
 
    <footer class="decoracion-inferior" aria-hidden="true">
     <div class="jardin-pixel"></div>
   </footer> 
 
-  <footer class="pie-pagina">
+  <footer class="pie-pagina" id="contacto">
     <div class="pie-contenido">
       <h2 class="pie-contacto-titulo">Contacto</h2>
       <p class="pie-contacto-texto">¿Hablamos? Escríbeme por cualquiera de estos medios.</p>
@@ -126,6 +218,17 @@
           <a href="https://github.com/javier14974" class="pie-contacto-enlace" target="_blank" rel="noopener noreferrer">
             <span class="pie-contacto-icono pie-contacto-icono-github" aria-hidden="true"></span>
             GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="uploads/CV_Javier_Rios.pdf"
+            target="_blank"
+            class="pie-contacto-enlace pie-contacto-descargar-cv"
+            download="CV_Javier_Rios.pdf"
+          >
+            <span class="pie-contacto-icono pie-contacto-icono-curriculum" aria-hidden="true"></span>
+            Curriculum
           </a>
         </li>
       </ul>
