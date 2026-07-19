@@ -10,6 +10,7 @@
   --fondo: #f0f0ee;
   --texto: #1a1a1a;
   --texto-suave: #666;
+  --texto-sobre-claro: #2c2c2c;
   --borde: #1a1a1a;
   --verde: #4a7c59;
   --rosa: #e8a598;
@@ -17,6 +18,30 @@
   --coral: #e07a6a;
   --menta: #a8c5a0;
   --pixel: 4px;
+  --puntos: rgba(0, 0, 0, 0.12);
+  --card-imagen-fondo: #e8e8e4;
+  --borde-card: var(--borde);
+  --holding: #c0392b;
+  --interruptor-activo: #4a7c59;
+}
+
+html.modo-oscuro {
+  --fondo: #1a1c1a;
+  --texto: #b8b8b2;
+  --texto-suave: #8e8e88;
+  --texto-sobre-claro: #3a3a3a;
+  --borde: #1a3a6b;
+  --verde: #6b9e78;
+  --rosa: #d49288;
+  --amarillo: #d4bc6a;
+  --coral: #c96b5c;
+  --menta: #8fb387;
+  --puntos: rgba(255, 255, 255, 0.1);
+  --card-imagen-fondo: #2a2c2a;
+  --borde-card: #1a3a6b;
+  --holding: #e07a6a;
+  --interruptor-activo: #6b9e78;
+  color-scheme: dark;
 }
 
 html {
@@ -39,7 +64,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--puntos) 1px, transparent 1px);
   background-size: 6px 6px;
 }
 
@@ -74,6 +99,73 @@ body {
 .logo-texto {
   font-size: 1.25rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cabecera-acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.interruptor-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto);
+  background-color: var(--fondo);
+  border: 3px solid var(--borde);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+  cursor: pointer;
+  transition: transform 0.15s steps(2);
+}
+
+.interruptor-tema:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    calc(var(--pixel) + 2px) 0 0 0 var(--borde),
+    0 calc(var(--pixel) + 2px) 0 0 var(--borde),
+    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde);
+}
+
+.interruptor-tema-pista {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 18px;
+  background-color: var(--texto-suave);
+  border: 2px solid var(--borde);
+  flex-shrink: 0;
+  transition: background-color 0.15s steps(2);
+}
+
+.interruptor-tema-boton {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--fondo);
+  border: 2px solid var(--borde);
+  transition: transform 0.15s steps(2);
+}
+
+.interruptor-tema[aria-pressed="true"] .interruptor-tema-pista {
+  background-color: var(--interruptor-activo);
+}
+
+.interruptor-tema[aria-pressed="true"] .interruptor-tema-boton {
+  transform: translateX(16px);
+}
+
+.interruptor-tema-texto {
   letter-spacing: 0.02em;
 }
 
@@ -177,7 +269,7 @@ body {
 }
 
 .empresa-holding {
-  color: #c0392b;
+  color: var(--holding);
 }
 
 /* Grid de cards */
@@ -190,29 +282,29 @@ body {
 /* Card pixelada */
 .card {
   background-color: var(--fondo);
-  border: 3px solid var(--borde);
+  border: 3px solid var(--borde-card);
   box-shadow:
-    var(--pixel) 0 0 0 var(--borde),
-    0 var(--pixel) 0 0 var(--borde),
-    var(--pixel) var(--pixel) 0 0 var(--borde);
+    var(--pixel) 0 0 0 var(--borde-card),
+    0 var(--pixel) 0 0 var(--borde-card),
+    var(--pixel) var(--pixel) 0 0 var(--borde-card);
   transition: transform 0.15s steps(2);
 }
 
 .card:hover {
   transform: translate(-2px, -2px);
   box-shadow:
-    calc(var(--pixel) + 2px) 0 0 0 var(--borde),
-    0 calc(var(--pixel) + 2px) 0 0 var(--borde),
-    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde);
+    calc(var(--pixel) + 2px) 0 0 0 var(--borde-card),
+    0 calc(var(--pixel) + 2px) 0 0 var(--borde-card),
+    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde-card);
 }
 
 /* Área de imagen vacía con dithering */
 .card-imagen {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-bottom: 3px solid var(--borde);
+  border-bottom: 3px solid var(--borde-card);
   position: relative;
-  background-color: #e8e8e4;
+  background-color: var(--card-imagen-fondo);
   background-image:
     linear-gradient(45deg, var(--amarillo) 25%, transparent 25%),
     linear-gradient(-45deg, var(--rosa) 25%, transparent 25%),
@@ -373,6 +465,126 @@ body {
   background-color: var(--menta);
 }
 
+html.modo-oscuro .pastilla,
+html.modo-oscuro .pastilla-verde,
+html.modo-oscuro .pastilla-coral {
+  color: var(--texto-sobre-claro);
+}
+
+/* Chat para reclutadores */
+.chat-reclutador {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.chat-caja {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  border: 3px solid var(--borde);
+  background-color: var(--fondo);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+}
+
+.chat-mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 220px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-bottom: 3px solid var(--borde);
+}
+
+.chat-burbuja {
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.45;
+  border: 3px solid var(--borde);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+}
+
+.chat-burbuja-yo {
+  align-self: flex-start;
+  background-color: var(--menta);
+  color: var(--texto-sobre-claro);
+}
+
+.chat-burbuja-reclutador {
+  align-self: flex-end;
+  background-color: var(--amarillo);
+  color: var(--texto-sobre-claro);
+}
+
+.chat-formulario {
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.chat-etiqueta {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.chat-controles {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.chat-select {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto);
+  background-color: var(--fondo);
+  border: 3px solid var(--borde);
+  cursor: pointer;
+}
+
+.chat-enviar {
+  flex-shrink: 0;
+  padding: 0.65rem 1.15rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--verde);
+  border: 3px solid var(--borde);
+  box-shadow:
+    var(--pixel) 0 0 0 var(--borde),
+    0 var(--pixel) 0 0 var(--borde),
+    var(--pixel) var(--pixel) 0 0 var(--borde);
+  cursor: pointer;
+  transition: transform 0.15s steps(2);
+}
+
+.chat-enviar:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    calc(var(--pixel) + 2px) 0 0 0 var(--borde),
+    0 calc(var(--pixel) + 2px) 0 0 var(--borde),
+    calc(var(--pixel) + 2px) calc(var(--pixel) + 2px) 0 0 var(--borde);
+}
+
+html.modo-oscuro .chat-enviar {
+  color: var(--texto-sobre-claro);
+}
+
 /* Jardín pixelado — estático, justo encima del pie de página */
 .decoracion-inferior {
   position: relative;
@@ -443,7 +655,7 @@ body {
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--texto);
+  color: var(--texto-sobre-claro);
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.95);
   border: 3px solid var(--borde);
@@ -638,5 +850,13 @@ body {
 
   .grid-cards {
     gap: 1.5rem;
+  }
+
+  .chat-controles {
+    flex-direction: column;
+  }
+
+  .chat-enviar {
+    width: 100%;
   }
 }

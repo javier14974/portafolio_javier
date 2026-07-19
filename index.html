@@ -8,6 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cvv.css">
+  <script>
+    (function () {
+      var tema = localStorage.getItem("tema-portafolio");
+      var oscuro = tema === "oscuro" || (!tema && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      if (oscuro) {
+        document.documentElement.classList.add("modo-oscuro");
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="fondo-puntos" aria-hidden="true"></div>
@@ -17,7 +26,22 @@
       <span class="logo-icono"></span>
       <span class="logo-texto">Portafolio</span>
     </div>
-    <a href="#contacto" class="boton-contacto">Contacto</a>
+    <div class="cabecera-acciones">
+      <button
+        type="button"
+        class="interruptor-tema"
+        id="interruptor-tema"
+        aria-label="Activar modo oscuro"
+        aria-pressed="false"
+      >
+        <span class="interruptor-tema-pista">
+          <span class="interruptor-tema-boton"></span>
+        </span>
+        <span class="interruptor-tema-texto">Oscuro</span>
+      </button>
+      <a href="#chat" class="boton-contacto">Chat</a>
+      <a href="#contacto" class="boton-contacto">Contacto</a>
+    </div>
   </header>
 
   
@@ -184,9 +208,32 @@
         </ul>
       </div>
     </section>
+
+    <section class="chat-reclutador" id="chat">
+      <h2 class="habilidades-titulo">Chat, preguntame cualquier cosa</h2>
+      <p class="habilidades-subtitulo">Pregunta sobre mi experiencia, proyectos, habilidades, etc.</p>
+
+      <div class="chat-caja">
+        <div class="chat-mensajes" id="chat-mensajes" aria-live="polite">
+          <div class="chat-burbuja chat-burbuja-yo">
+            Hola, soy Javier. Elige una pregunta del menú y te cuento.
+          </div>
+        </div>
+
+        <form class="chat-formulario" id="chat-formulario">
+          <label class="chat-etiqueta" for="chat-select">Pregunta</label>
+          <div class="chat-controles">
+            <select class="chat-select" id="chat-select" required>
+              <option value="" disabled selected>¿Qué te gustaría saber?</option>
+            </select>
+            <button type="submit" class="chat-enviar">Preguntar</button>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
-
+  <br><br>
 
    <footer class="decoracion-inferior" aria-hidden="true">
     <div class="jardin-pixel"></div>
